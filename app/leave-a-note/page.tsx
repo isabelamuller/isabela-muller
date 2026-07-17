@@ -59,16 +59,6 @@ export default function LeaveANote() {
           </p>
         </header>
         <form onSubmit={handleSubmit} className="py-5">
-          <input
-            id="name"
-            name="name"
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            placeholder="anonymous"
-            maxLength={80}
-            className="mb-5 w-full border border-black/50 bg-transparent p-2 text-sm outline-none placeholder:opacity-30 focus:border-black"
-          />
           <label
             htmlFor="note"
             className="mb-2 block text-[11px] tracking-wider opacity-50"
