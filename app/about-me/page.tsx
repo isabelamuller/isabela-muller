@@ -1,47 +1,68 @@
 import { BottomMenu } from "@/components/BottomMenu";
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About me | Isabela Müller",
+  description: "Isabela Müller about me",
+};
+
+const information = [
+  ["name", "Isabela Müller"],
+  ["born", "2001, Novo Hamburgo, Brazil"],
+  ["occupation", "front-end developer"],
+  ["goals", "making a personal website"],
+  ["turn-ons", "music, clothes, flags, lighthouses and strange films"],
+  ["turn-offs", "corporate positivity and unnecessary gradients"],
+];
 
 export default function AboutMe() {
   return (
-    <main className="font-arial flex min-h-dvh items-center justify-center overflow-hidden">
-      <h1 className="font-plinko absolute top-10 text-[30px]">about me</h1>
-      <div className="mx-auto aspect-[7/4] max-w-[680px] w-full flex flex-row justify-center items-center gap-4">
-        <a className="absolute top-40 left-115" href="/menu">
-          back
-        </a>
-        <Image
-          className="h-fit"
-          src="/me.jpeg"
-          alt="Me myself and I"
-          width={140}
-          height={140}
-        />
-        <div className="flex flex-col">
-          <span>
-            <span className="font-bold">Name:</span> Isabela Müller
-          </span>
-          <span>
-            <span className="font-bold">Birth date:</span> 2001
-          </span>
-          <span>
-            <span className="font-bold">Birthplace:</span> Novo Hamburgo, Rio
-            Grande do Sul, Brazil
-          </span>
-          <span>
-            <span className="font-bold">Goals:</span> own a big house and have
-            tons of animals;
-          </span>
-          <span>
-            <span className="font-bold">Turn-ons:</span> dsfdsf
-          </span>
-          <span>
-            <span className="font-bold">Turn-offs:</span> dfdsf
-          </span>
-          <span>Favorite Books: Pale Blue Dot by Carl Sagan;</span>
-          <span>Favorite Movies:</span>
-          <span>Favorite Quotation:</span>
-        </div>
-      </div>
+    <main className="min-h-dvh overflow-hidden font-quicksand">
+      <section className="mx-auto w-full max-w-[650px] p-6 mt-20 relative">
+        <header className="mb-10 flex items-center">
+          <h1 className="font-plinko text-[30px]">about me</h1>
+        </header>
+        <figure className="mb-8 flex">
+          <Image
+            src="/me-blue.png"
+            alt="Isabela Müller"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/me-red.png"
+            alt="Isabela Müller"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/me-green.png"
+            alt="Isabela Müller"
+            width={100}
+            height={100}
+          />
+        </figure>
+        <dl className="grid grid-cols-2 gap-x-10 gap-y-4 text-sm">
+          {information.map(([label, value]) => (
+            <div key={label}>
+              <dt className="text-[11px] uppercase opacity-50">{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+        <Link href="/menu" className="mt-10 inline-block text-sm underline">
+          [ back ]
+        </Link>
+      </section>
+      {/* <Image
+        className="absolute bottom-4 left-1/2 -translate-x-1/2"
+        src="/crowd.gif"
+        alt=""
+        width={300}
+        height={100}
+      /> */}
       <BottomMenu />
     </main>
   );
