@@ -1,6 +1,7 @@
 "use client";
 
 import { BottomMenu } from "@/components/BottomMenu";
+import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 
@@ -49,7 +50,7 @@ export default function LeaveANote() {
   };
 
   return (
-    <main className="relative min-h-dvh overflow-hidden font-arial text-base">
+    <main className="relative min-h-dvh overflow-hidden font-quicksand text-base">
       <section className="mx-auto w-full max-w-[650px] px-6 pt-24">
         <header className="mb-3">
           <h1 className="font-plinko text-[30px]">leave a note</h1>
@@ -105,6 +106,13 @@ export default function LeaveANote() {
         <Link href="/menu" className="mt-6 inline-block text-sm underline">
           [ back ]
         </Link>
+        <Image
+          className="absolute bottom-4 left-1/2 -translate-x-1/2"
+          src="/ratmail.gif"
+          alt=""
+          width={230}
+          height={100}
+        />
       </section>
       <BottomMenu />
     </main>

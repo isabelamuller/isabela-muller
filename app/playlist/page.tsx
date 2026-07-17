@@ -359,6 +359,13 @@ export default function Playlist() {
         <Link href="/menu" className="mt-10 inline-block text-sm underline">
           [ back ]
         </Link>
+        <Image
+          className="absolute bottom-6 left-1/2 -translate-x-1/2"
+          src="/art.gif"
+          alt=""
+          width={400}
+          height={100}
+        />
       </section>
       <BottomMenu />
     </main>

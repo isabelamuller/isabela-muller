@@ -13,8 +13,11 @@ const information = [
   ["born", "2001, Novo Hamburgo, Brazil"],
   ["occupation", "front-end developer"],
   ["goals", "making a personal website"],
-  ["turn-ons", "music, clothes, flags, lighthouses and strange films"],
-  ["turn-offs", "corporate positivity and unnecessary gradients"],
+  [
+    "likes",
+    "books, radio, lighthouses, strange films, cats, all things vintage",
+  ],
+  ["dislikes", "corporate life, gen AI, pizza and taking out the trash"],
 ];
 
 export default function AboutMe() {
@@ -56,13 +59,13 @@ export default function AboutMe() {
           [ back ]
         </Link>
       </section>
-      {/* <Image
+      <Image
         className="absolute bottom-4 left-1/2 -translate-x-1/2"
-        src="/crowd.gif"
+        src="/elmer.gif"
         alt=""
-        width={300}
+        width={230}
         height={100}
-      /> */}
+      />
       <BottomMenu />
     </main>
   );
