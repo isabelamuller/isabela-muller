@@ -1,40 +1,24 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Isabela Müller",
+  description: "Isabela Müller",
+};
 
 export default function Home() {
   return (
-    <div className="bg-[#d50b0a] h-dvh relative select-none text-white">
+    <div className="bg-[#0f0f0f] h-dvh relative select-none text-white">
       <a href="/menu">
-        <div className="absolute top-30 left-1/2 -translate-x-1/2 flex flex-col tracking-wider italic text-sm">
+        <div className="absolute top-40 left-1/2 -translate-x-1/2 flex gap-3 flex-col tracking-wider italic text-sm">
           <span>isabela müller</span>
-          <div className="flex gap-3">
-            <div className="border-[#000000] border-2">
-              <Image
-                src="/duck-1.png"
-                width={85}
-                height={85}
-                alt=""
-                className="grayscale contrast-125"
-              />
-            </div>
-            <div className="border-[#000000] border-2">
-              <Image
-                src="/duck-2.jpeg"
-                width={85}
-                height={85}
-                alt=""
-                className="grayscale contrast-125"
-              />
-            </div>
-            <div className="border-[#000000] border-2">
-              <Image
-                src="/duck-3.png"
-                width={85}
-                height={85}
-                alt=""
-                className="grayscale contrast-125"
-              />
-            </div>
-          </div>
+          <Image
+            src="/brain-transparent-2.png"
+            width={200}
+            height={200}
+            alt=""
+            className="hover:brightness-120"
+          />
           <span className="text-end w-full">the digital me</span>
         </div>
       </a>

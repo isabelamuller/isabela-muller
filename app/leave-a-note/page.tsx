@@ -1,9 +1,15 @@
 "use client";
 
 import { BottomMenu } from "@/components/BottomMenu";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+
+// export const metadata: Metadata = {
+//   title: "leave a note",
+//   description: "Isabela Müller leave a note",
+// };
 
 const MAX_LENGTH = 500;
 
@@ -50,14 +56,10 @@ export default function LeaveANote() {
   };
 
   return (
-    <main className="relative min-h-dvh overflow-hidden font-quicksand text-base">
+    <main className="bg-[##faf9f5] relative min-h-dvh overflow-hidden font-quicksand text-base">
       <section className="mx-auto w-full max-w-[650px] px-6 pt-24">
         <header className="mb-3">
           <h1 className="font-plinko text-[30px]">leave a note</h1>
-          <p className="text-sm leading-relaxed opacity-60">
-            how about writing me something anonymously (or not)? feel free to
-            say whatever you&apos;d like.
-          </p>
         </header>
         <form onSubmit={handleSubmit} className="py-5">
           <label
@@ -107,8 +109,8 @@ export default function LeaveANote() {
           [ back ]
         </Link>
         <Image
-          className="absolute bottom-4 left-1/2 -translate-x-1/2"
-          src="/ratmail.gif"
+          className="absolute bottom-7 left-1/2 -translate-x-1/2"
+          src="/postman.jpg"
           alt=""
           width={230}
           height={100}

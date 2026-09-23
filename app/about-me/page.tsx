@@ -4,25 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About me | Isabela Müller",
+  title: "about me",
   description: "Isabela Müller about me",
 };
 
 const information = [
   ["name", "Isabela Müller"],
   ["born", "2001, Novo Hamburgo, Brazil"],
-  ["occupation", "front-end developer"],
-  ["goals", "making a personal website"],
-  [
-    "likes",
-    "books, radio, lighthouses, strange films, cats, all things vintage",
-  ],
-  ["dislikes", "corporate life, gen AI, pizza and taking out the trash"],
+  ["occupation", "senior front-end developer"],
+  ["goals", "live a happy fulfilling life"],
+  ["likes", "books, radio, strange films, cats, all things vintage"],
+  ["dislikes", "pizza, taking out the trash, gen AI, blah blah blah"],
 ];
 
 export default function AboutMe() {
   return (
-    <main className="min-h-dvh overflow-hidden font-quicksand">
+    <main className="min-h-dvh overflow-hidden font-quicksand bg-[##faf9f5]">
       <section className="mx-auto w-full max-w-[650px] p-6 mt-20 relative">
         <header className="mb-10 flex items-center">
           <h1 className="font-plinko text-[30px]">about me</h1>
@@ -50,7 +47,7 @@ export default function AboutMe() {
         <dl className="grid grid-cols-2 gap-x-10 gap-y-4 text-sm">
           {information.map(([label, value]) => (
             <div key={label}>
-              <dt className="text-[11px] uppercase opacity-50">{label}</dt>
+              <dt className="text-[11px] opacity-50">{label}</dt>
               <dd>{value}</dd>
             </div>
           ))}
@@ -60,10 +57,10 @@ export default function AboutMe() {
         </Link>
       </section>
       <Image
-        className="absolute bottom-4 left-1/2 -translate-x-1/2"
-        src="/elmer.gif"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2"
+        src="/crowd.gif"
         alt=""
-        width={230}
+        width={330}
         height={100}
       />
       <BottomMenu />

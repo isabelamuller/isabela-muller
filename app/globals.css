@@ -30,3 +30,35 @@
 body {
   background: var(--background);
 }
+
+.pixel-cat {
+  display: block;
+  width: var(--cat-size);
+  height: var(--cat-size);
+
+  background-image: var(--cat-image);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: var(--sheet-width) var(--cat-size);
+
+  image-rendering: pixelated;
+
+  animation: cat-sprite
+    var(--animation-duration)
+    steps(var(--frame-count))
+    infinite;
+}
+
+.pixel-cat-left {
+  transform: scaleX(-1);
+}
+
+@keyframes cat-sprite {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: calc(var(--sheet-width) * -1);
+  }
+}
