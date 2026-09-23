@@ -18,7 +18,7 @@ export default function Menu() {
           href="/about-me"
           className="group absolute left-1/2 top-[2%] flex w-max -translate-x-1/2 flex-col items-center"
         >
-          <Image src="/daisy.jpg" alt="About me" width={30} height={30} />
+          <Image src="/Daisy.jpg" alt="About me" width={30} height={30} />
           <span className="group-hover:text-[#6b60ad]">about me</span>
         </Link>
         <a className="absolute left-[18%] top-[23%] flex w-max -translate-x-1/2 -translate-y-1/2 cursor-pointer flex-col items-center">
