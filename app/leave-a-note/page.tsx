@@ -56,7 +56,7 @@ export default function LeaveANote() {
   };
 
   return (
-    <main className="bg-[##faf9f5] relative min-h-dvh overflow-hidden font-quicksand text-base">
+    <main className="bg-[#faf9f5] relative min-h-dvh overflow-hidden font-quicksand text-base">
       <section className="mx-auto w-full max-w-[650px] px-6 pt-24">
         <header className="mb-3">
           <h1 className="font-plinko text-[30px]">leave a note</h1>
@@ -110,7 +110,7 @@ export default function LeaveANote() {
         </Link>
         <Image
           className="absolute bottom-7 left-1/2 -translate-x-1/2"
-          src="/postman.jpg"
+          src="/postman.png"
           alt=""
           width={230}
           height={100}
