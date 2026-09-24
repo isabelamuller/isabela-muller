@@ -29,7 +29,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col px-5 md:px-0">
         {children}
-        <footer className="fixed bottom-3 left-3 flex flex-col font-arial text-xs">
+        <footer className="fixed bottom-3 left-3 md:flex flex-col font-arial text-xs hidden">
           <a
             href="mailto:isabelamuller1@hotmail.com"
             className="opacity-30 hover:opacity-100"

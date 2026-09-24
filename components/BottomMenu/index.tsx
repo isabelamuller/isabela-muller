@@ -13,7 +13,7 @@ const menuItems = [
 
 export const BottomMenu = () => {
   return (
-    <nav className="fixed bottom-0 left-1/2 w-full -translate-x-1/2 bg-[#faf9f5] font-smooch-sans tracking-wider">
+    <nav className="fixed bottom-0 left-1/2 w-full -translate-x-1/2 bg-[#faf9f5] font-smooch-sans md:tracking-wider">
       <ul className="flex items-center justify-center gap-1 whitespace-nowrap">
         <li>[</li>
         {menuItems.map(({ label, href }, index) => (
