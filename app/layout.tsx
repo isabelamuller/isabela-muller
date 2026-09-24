@@ -27,8 +27,8 @@ export default function RootLayout({
         ${smoochSans.variable}
       `}
     >
-      <body className="flex min-h-full flex-col">
-        <main>{children}</main>
+      <body className="flex min-h-full flex-col px-5 md:px-0">
+        {children}
         <footer className="fixed bottom-3 left-3 flex flex-col font-arial text-xs">
           <a
             href="mailto:isabelamuller1@hotmail.com"
