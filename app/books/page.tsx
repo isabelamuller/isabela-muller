@@ -2,10 +2,11 @@
 
 import { BottomMenu } from "@/components/BottomMenu";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Books() {
   return (
-    <main className="relative min-h-dvh overflow-hidden font-quicksand text-base">
+    <main className="relative min-h-dvh overflow-hidden font-quicksand text-base bg-[#faf9f5]">
       <section className="mx-auto flex h-[calc(100dvh-120px)] max-h-[720px] w-full max-w-[650px] flex-col px-6 pt-24">
         <header className="mb-8">
           <div className="flex items-center gap-3">
@@ -42,6 +43,9 @@ export default function Books() {
             className="h-[510px] w-auto"
           />
         </div>
+        <Link href="/menu" className="mt-10 inline-block text-sm underline">
+          [ back ]
+        </Link>
       </section>
       <BottomMenu />
     </main>

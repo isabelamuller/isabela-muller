@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <main className="bg-[##faf9f5] relative min-h-dvh overflow-hidden font-quicksand">
+    <main className="bg-[#faf9f5] relative min-h-dvh overflow-hidden font-quicksand">
       <section className="mx-auto w-full max-w-[650px] px-6 pt-24">
         <header className="mb-10">
           <h1 className="font-plinko text-[30px]">contact me</h1>

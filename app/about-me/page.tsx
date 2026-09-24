@@ -19,7 +19,7 @@ const information = [
 
 export default function AboutMe() {
   return (
-    <main className="min-h-dvh overflow-hidden font-quicksand bg-[##faf9f5]">
+    <main className="min-h-dvh overflow-hidden font-quicksand bg-[#faf9f5]">
       <section className="mx-auto w-full max-w-[650px] p-6 mt-20 relative">
         <header className="mb-10 flex items-center">
           <h1 className="font-plinko text-[30px]">about me</h1>

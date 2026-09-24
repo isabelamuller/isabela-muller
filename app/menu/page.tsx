@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Menu() {
   return (
-    <main className="bg-[##faf9f5] flex min-h-dvh items-center justify-center overflow-hidden">
+    <main className="bg-[#faf9f5] flex min-h-dvh items-center justify-center overflow-hidden">
       <div className="relative aspect-[7/4] max-w-[650px] w-full -translate-y-[70px]">
         <h1 className="absolute left-1/2 top-1/2 w-max -translate-x-1/2 -translate-y-1/2 text-center font-shirleydoe text-[40px] font-bold">
           isabela muller
