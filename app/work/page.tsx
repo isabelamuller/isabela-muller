@@ -12,7 +12,7 @@ export default function Cats() {
           <h1 className="font-plinko text-[30px]">work</h1>
         </header>
         <div className="flex relative justify-center">
-          <h2>sorry, this page is still under construction!</h2>
+          <h2>sorry, this page is still under construction! :D</h2>
           <Image
             className="absolute bottom-[-3px] right-10"
             src="/cat1.gif"
