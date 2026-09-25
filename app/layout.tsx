@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
 import { Quicksand, Smooch_Sans } from "next/font/google";
 import { PageLoader } from "./PageLoader";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <PageLoader />
         {children}
+        <Analytics />
         <footer className="fixed bottom-3 left-3 md:flex flex-col font-arial text-xs hidden">
           <a
             href="mailto:isabelamuller1@hotmail.com"
