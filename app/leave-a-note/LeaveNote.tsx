@@ -99,7 +99,7 @@ export default function LeaveANote() {
         </form>
         <BackButton />
         <Image
-          className="absolute bottom-7 left-1/2 -translate-x-1/2"
+          className="absolute md:bottom-7 bottom-13 left-1/2 -translate-x-1/2"
           src="/ratmail.gif"
           alt=""
           width={230}

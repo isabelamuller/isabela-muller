@@ -47,7 +47,7 @@ export default function AboutMe() {
         <BackButton />
       </section>
       <Image
-        className="absolute bottom-5 left-1/2 -translate-x-1/2"
+        className="absolute md:bottom-5 bottom-13 left-1/2 -translate-x-1/2"
         src="/crowd.gif"
         alt=""
         width={330}

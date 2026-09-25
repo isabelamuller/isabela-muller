@@ -33,9 +33,12 @@ export default function Cats() {
             </span>
           </button>
         </div>
+        <h2 className="text-center mt-5 text-lg">
+          sorry, this page is still under construction. <br /> come back later!
+        </h2>
       </section>
       <Image
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute md:bottom-10 bottom-20 left-1/2 -translate-x-1/2"
         src="/acatcanpurr.jpg"
         alt=""
         width={330}
