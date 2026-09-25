@@ -24,7 +24,7 @@ export const books = [
     title: "Pale Blue Dot",
     author: "Carl Sagan",
     year: "1994",
-    review: "",
+    review: `You can't go wrong with Carl Sagan. "For me, the most ironic token of that moment in history is the plaque signed by President Richard M. Nixon that Apollo 11 took to the Moon. It reads: 'We came in peace for all mankind.' As the United States was dropping 7½ megatons of conventional explosives on small nations in Southern Asia, we congratulated ourselves on our humanity: We would harm no one on a lifeless rock."`,
     height: 510,
     stars: 4,
   },
@@ -64,7 +64,7 @@ export const books = [
     author: "J.K. Rowling",
     year: "2000",
     review:
-      "It took me over a year to finish this book, but it's good. Definitely not my favourite in the HP series so far, especially because the author crammed way too many storylines into one book. But it's a good book nonetheless",
+      "It took me over a year to finish this book, but it's good. Definitely not my favourite in the HP series so far, especially because the author crammed way too many storylines into one book. But it's a good book nonetheless.",
     height: 510,
     stars: 3,
   },
@@ -84,7 +84,7 @@ export const books = [
     author: "Avgi Saketopoulou",
     year: "2023",
     review:
-      "This book was probably my toughest read ever, not in a bad way, but in a Why Is The Author Using So Many Difficult Words For No Reason? kind of way. It is of course a book for psychology scholars (which I'm not), so it requires some understanding of Freud and Carl Jung. Overall the book brings up some interesting and very unpopular/controversial topics regarding consent and sexuality. I liked it, but I believe psychology majors would enjoy it even more. Be prepared to be shocked though.",
+      "This book was probably my toughest read ever, not in a bad way, but in a Why Is The Author Using So Many Difficult Words For No Reason? kind of way. It is of course a book for psychology scholars (which I'm not), so it requires some understanding of Freud and Carl Jung. Overall the book brings up some interesting and very unpopular/controversial topics regarding consent and sexuality. I liked it, but I believe psychology majors would enjoy it even more.",
     height: 555,
     stars: 4,
   },

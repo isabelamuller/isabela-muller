@@ -5,74 +5,14 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { books } from "./data";
 import { BackButton } from "@/components/Back";
-
-const stars = [1, 2, 3, 4, 5];
-
-function BookRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-0 md:pt-4 pt-1">
-      {stars.map((star) => {
-        const isFull = rating >= star;
-        const isHalf = rating === star - 0.5;
-
-        if (isFull) {
-          return (
-            <Image
-              key={star}
-              src="/star-full.png"
-              alt=""
-              width={25}
-              height={25}
-              className="h-[22px] w-[22px] shrink-0 object-contain"
-            />
-          );
-        }
-        if (isHalf) {
-          return (
-            <div key={star} className="relative h-[22px] w-[22px] shrink-0">
-              <Image
-                src="/star-full.png"
-                alt=""
-                width={25}
-                height={25}
-                className="absolute inset-0 h-[22px] w-[22px] object-contain opacity-20"
-              />
-              <div className="absolute inset-0 h-[22px] w-[22px] overflow-hidden">
-                <Image
-                  src="/star-full.png"
-                  alt=""
-                  width={25}
-                  height={25}
-                  className="h-[22px] w-[22px] object-contain"
-                  style={{
-                    clipPath: "inset(0 50% 0 0)",
-                  }}
-                />
-              </div>
-            </div>
-          );
-        }
-
-        return (
-          <Image
-            key={star}
-            src="/star-full.png"
-            alt=""
-            width={25}
-            height={25}
-            className="h-[22px] w-[22px] shrink-0 object-contain opacity-40"
-          />
-        );
-      })}
-    </div>
-  );
-}
+import { BookRating } from "@/components/BookRating";
+import { useTickSound } from "@/utils/useSound";
 
 export default function Books() {
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
   const [selectedBook, setSelectedBook] = useState<number | null>(null);
-
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+  const playTick = useTickSound();
 
   const handleMouseEnter = (index: number) => {
     if (closeTimeout.current) {
@@ -80,6 +20,7 @@ export default function Books() {
     }
 
     setHoveredBook(index);
+    playTick();
   };
 
   const handleMouseLeave = () => {
@@ -90,6 +31,7 @@ export default function Books() {
 
   const handleMobileBookClick = (index: number) => {
     setSelectedBook((current) => (current === index ? null : index));
+    playTick();
   };
 
   const selected = selectedBook !== null ? books[selectedBook] : null;
@@ -190,28 +132,32 @@ export default function Books() {
                   />
                   {isHovered && (
                     <div
-                      className="absolute left-full top-1/2 z-10 flex h-full w-[270px] -translate-y-1/2 flex-col bg-[#fcfaf2] p-6"
+                      className="absolute left-full top-1/2 z-10 flex h-full w-[270px] -translate-y-1/2 flex-col overflow-hidden bg-[#fcfaf2] p-4"
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <div className="flex items-start justify-between gap-4">
-                        <span className="text-[11px] uppercase tracking-[0.15em]">
-                          {book.year}
-                        </span>
-                      </div>
-                      <div className="mt-5">
-                        <h2 className="font-quicksand text-[28px] leading-[0.95]">
-                          {book.title}
-                        </h2>
-                        <p className="my-2 text-sm">{book.author}</p>
+                      <div className="shrink-0">
+                        <div className="flex items-start justify-between gap-4">
+                          <span className="text-[11px] uppercase tracking-[0.15em]">
+                            {book.year}
+                          </span>
+                        </div>
+                        <div className="mt-2">
+                          <h2 className="font-quicksand text-[20px] leading-[0.95]">
+                            {book.title}
+                          </h2>
+                          <p className="my-2 text-sm">{book.author}</p>
+                        </div>
                       </div>
                       {book.review && (
-                        <p className="border-t border-black pt-2 text-sm leading-relaxed">
-                          {book.review}
-                        </p>
+                        <div className="min-h-0 flex-1 overflow-y-auto">
+                          <p className="text-sm leading-relaxed">
+                            {book.review}
+                          </p>
+                        </div>
                       )}
                       {book.stars !== undefined && (
-                        <div className="mt-auto">
+                        <div className="shrink-0">
                           <BookRating rating={book.stars} />
                         </div>
                       )}

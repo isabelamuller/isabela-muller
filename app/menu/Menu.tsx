@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { links, POPUP_STORAGE_KEY } from "./data";
+import { useTickSound } from "@/utils/useSound";
 
 export default function Menu() {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const playTick = useTickSound();
 
   useEffect(() => {
     const popupClosed = localStorage.getItem(POPUP_STORAGE_KEY);
@@ -50,6 +52,8 @@ export default function Menu() {
           <Link
             key={link.title}
             href={link.href}
+            onMouseEnter={() => playTick()}
+            onClick={() => playTick()}
             className={`group absolute ${link.position} flex w-max -translate-x-1/2 -translate-y-1/2 flex-col items-center`}
           >
             <Image
@@ -58,6 +62,7 @@ export default function Menu() {
               width={link.width}
               height={link.height}
             />
+
             <span
               style={{ "--hover-color": link.color } as React.CSSProperties}
               className="group-hover:text-[var(--hover-color)] md:text-[16px] text-[12px]"
