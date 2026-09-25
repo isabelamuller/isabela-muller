@@ -11,17 +11,8 @@ export default function Cats() {
         <header className="mb-12">
           <h1 className="font-plinko text-[30px]">work</h1>
         </header>
-        <div className="flex relative justify-center">
-          <h2>sorry, this page is still under construction! :D</h2>
-          <Image
-            className="absolute bottom-[-3px] right-10"
-            src="/cat1.gif"
-            alt=""
-            width={100}
-            height={100}
-          />
-        </div>
-        {/* <Image src="/guy.png" alt="" width={100} height={100} /> */}
+        <h2>sorry, this page is still under construction! :D</h2>
+        <Image src="/guy.png" alt="" width={100} height={100} />
         <Link href="/menu" className="mt-6 inline-block text-sm underline">
           [ back ]
         </Link>

@@ -110,7 +110,7 @@ export default function LeaveANote() {
         </Link>
         <Image
           className="absolute bottom-7 left-1/2 -translate-x-1/2"
-          src="/postman.png"
+          src="/ratmail.gif"
           alt=""
           width={230}
           height={100}
