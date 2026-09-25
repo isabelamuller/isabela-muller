@@ -184,7 +184,9 @@ export default function Books() {
                     height={100}
                     alt={book.title}
                     className="w-auto"
-                    style={{ height: `${book.height}px` }}
+                    style={{
+                      height: `clamp(280px, calc(100dvh - 300px), ${book.height}px)`,
+                    }}
                   />
                   {isHovered && (
                     <div
