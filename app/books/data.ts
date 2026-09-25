@@ -74,7 +74,7 @@ export const books = [
     author: "Carl Sagan",
     year: "1997",
     review:
-      "A must read for every single human being on planet Earth. This book is almost 30 years",
+      "A must-read for every single human being on planet Earth. This book is almost 30 years old but it's still so relevant today. Just read it, you won't regret it. Also I believe Carl Sagan would be institutionalized if he were alive today lol. 4.5/5 only because I found myself getting tired of Carl Sagan repeating the same things over and over again. I mean yeah we need to be skeptical, I get it, now move on alreadyyyyy.",
     height: 510,
     stars: 4.5,
   },
@@ -83,8 +83,10 @@ export const books = [
     title: "Sexuality Beyond Consent",
     author: "Avgi Saketopoulou",
     year: "2023",
-    review: "",
+    review:
+      "This book was probably my toughest read ever, not in a bad way, but in a Why Is The Author Using So Many Difficult Words For No Reason? kind of way. It is of course a book for psychology scholars (which I'm not), so it requires some understanding of Freud and Carl Jung. Overall the book brings up some interesting and very unpopular/controversial topics regarding consent and sexuality. I liked it, but I believe psychology majors would enjoy it even more. Be prepared to be shocked though.",
     height: 555,
+    stars: 4,
   },
   {
     image: "/o-terceiro-tira.png",

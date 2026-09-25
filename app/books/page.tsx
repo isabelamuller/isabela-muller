@@ -8,8 +8,71 @@ import { books } from "./data";
 
 const stars = [1, 2, 3, 4, 5];
 
+function BookRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex items-center gap-0 pt-4">
+      {stars.map((star) => {
+        const isFull = rating >= star;
+        const isHalf = rating === star - 0.5;
+
+        if (isFull) {
+          return (
+            <Image
+              key={star}
+              src="/star-full.png"
+              alt=""
+              width={25}
+              height={25}
+              className="h-[22px] w-[22px] shrink-0 object-contain"
+            />
+          );
+        }
+        if (isHalf) {
+          return (
+            <div key={star} className="relative h-[22px] w-[22px] shrink-0">
+              <Image
+                src="/star-full.png"
+                alt=""
+                width={25}
+                height={25}
+                className="absolute inset-0 h-[22px] w-[22px] object-contain opacity-20"
+              />
+
+              <div className="absolute inset-0 h-[22px] w-[22px] overflow-hidden">
+                <Image
+                  src="/star-full.png"
+                  alt=""
+                  width={25}
+                  height={25}
+                  className="h-[22px] w-[22px] object-contain"
+                  style={{
+                    clipPath: "inset(0 50% 0 0)",
+                  }}
+                />
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <Image
+            key={star}
+            src="/star-full.png"
+            alt=""
+            width={25}
+            height={25}
+            className="h-[22px] w-[22px] shrink-0 object-contain opacity-40"
+          />
+        );
+      })}
+    </div>
+  );
+}
+
 export default function Books() {
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
+  const [selectedBook, setSelectedBook] = useState<number | null>(null);
+
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (index: number) => {
@@ -26,15 +89,75 @@ export default function Books() {
     }, 100);
   };
 
+  const handleMobileBookClick = (index: number) => {
+    setSelectedBook((current) => (current === index ? null : index));
+  };
+
+  const selected = selectedBook !== null ? books[selectedBook] : null;
+
   return (
     <main className="relative min-h-dvh overflow-hidden bg-[#faf9f5] font-quicksand text-base">
-      <section className="mx-auto flex h-[calc(100dvh-120px)] max-h-[720px] w-full max-w-[650px] flex-col px-6 md:pt-24 pt-6">
+      <section className="mx-auto flex min-h-dvh w-full max-w-[650px] flex-col px-6 pb-20 pt-6 md:h-[calc(100dvh-120px)] md:max-h-[720px] md:pt-20">
         <header className="mb-8">
-          <div className="flex items-center gap-3">
-            <h1 className="font-plinko text-[30px]">bookshelf</h1>
-          </div>
+          <h1 className="font-plinko text-[30px]">bookshelf</h1>
+          <span>all of the books I've read in 2026 so far!</span>
         </header>
-        <div className="relative left-1/2 w-screen -translate-x-1/2 px-2">
+        <div className="md:hidden">
+          <div className="overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex w-max items-end gap-2">
+              {books.map((book, index) => {
+                const isSelected = selectedBook === index;
+                return (
+                  <button
+                    key={book.title}
+                    type="button"
+                    onClick={() => handleMobileBookClick(index)}
+                    className={`flex shrink-0 cursor-pointer items-end transition-opacity duration-200 ${
+                      selectedBook !== null && !isSelected ? "opacity-40" : ""
+                    }`}
+                  >
+                    <Image
+                      src={book.image}
+                      width={100}
+                      height={100}
+                      alt={book.title}
+                      className="h-[230px] w-auto object-contain"
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {selected && (
+            <div className="mt-4 py-5">
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-[11px] uppercase tracking-[0.15em]">
+                  {selected.year}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedBook(null)}
+                  className="cursor-pointer text-sm"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="mt-3">
+                <h2 className="text-[26px] leading-[0.95]">{selected.title}</h2>
+                <p className="mt-2 text-sm">{selected.author}</p>
+              </div>
+              {selected.review && (
+                <p className="mt-5 border-t border-black pt-3 text-sm leading-relaxed">
+                  {selected.review}
+                </p>
+              )}
+              {selected.stars !== undefined && (
+                <BookRating rating={selected.stars} />
+              )}
+            </div>
+          )}
+        </div>
+        <div className="relative left-1/2 hidden w-full -translate-x-1/2 px-2 md:block">
           <div className="flex w-max items-end gap-1">
             {books.map((book, index) => {
               const isHovered = hoveredBook === index;
@@ -83,63 +206,8 @@ export default function Books() {
                         </p>
                       )}
                       {book.stars !== undefined && (
-                        <div className="mt-auto flex items-center gap-0 pt-5">
-                          {stars.map((star) => {
-                            const isFull = book.stars >= star;
-                            const isHalf = book.stars === star - 0.5;
-
-                            if (isFull) {
-                              return (
-                                <Image
-                                  key={star}
-                                  src="/star-full.png"
-                                  alt=""
-                                  width={25}
-                                  height={25}
-                                  className="h-[25px] w-[25px] shrink-0 object-contain"
-                                />
-                              );
-                            }
-
-                            if (isHalf) {
-                              return (
-                                <div
-                                  key={star}
-                                  className="relative h-[25px] w-[25px] shrink-0"
-                                >
-                                  <Image
-                                    src="/star-full.png"
-                                    alt=""
-                                    width={25}
-                                    height={25}
-                                    className="absolute inset-0 h-[25px] w-[25px] object-contain opacity-20"
-                                  />
-                                  <div className="absolute inset-0 h-[25px] w-[25px] overflow-hidden">
-                                    <Image
-                                      src="/star-full.png"
-                                      alt=""
-                                      width={25}
-                                      height={25}
-                                      className="h-[25px] w-[25px] object-contain"
-                                      style={{
-                                        clipPath: "inset(0 50% 0 0)",
-                                      }}
-                                    />
-                                  </div>
-                                </div>
-                              );
-                            }
-                            return (
-                              <Image
-                                key={star}
-                                src="/star-full.png"
-                                alt=""
-                                width={25}
-                                height={25}
-                                className="h-[25px] w-[25px] shrink-0 object-contain opacity-40"
-                              />
-                            );
-                          })}
+                        <div className="mt-auto">
+                          <BookRating rating={book.stars} />
                         </div>
                       )}
                     </div>
