@@ -28,7 +28,7 @@ export default function Books() {
 
   return (
     <main className="relative min-h-dvh overflow-hidden bg-[#faf9f5] font-quicksand text-base">
-      <section className="mx-auto flex h-[calc(100dvh-120px)] max-h-[720px] w-full max-w-[650px] flex-col px-6 md:pt-24 pt-10">
+      <section className="mx-auto flex h-[calc(100dvh-120px)] max-h-[720px] w-full max-w-[650px] flex-col px-6 md:pt-24 pt-6">
         <header className="mb-8">
           <div className="flex items-center gap-3">
             <h1 className="font-plinko text-[30px]">bookshelf</h1>

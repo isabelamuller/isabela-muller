@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Cats() {
   return (
     <main className="min-h-dvh bg-[#faf9f5] font-quicksand">
-      <section className="mx-auto w-full max-w-[650px] px-6 md:pt-24 pt-10">
+      <section className="mx-auto w-full max-w-[650px] px-6 md:pt-24 pt-6">
         <header className="mb-10">
           <h1 className="font-plinko text-[30px]">my cats</h1>
         </header>

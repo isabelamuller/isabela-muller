@@ -32,7 +32,7 @@ const contacts = [
 export default function Contact() {
   return (
     <main className="relative min-h-dvh overflow-hidden bg-[#faf9f5] font-quicksand">
-      <section className="mx-auto w-full max-w-[650px] px-6 md:md:pt-24 pt-10 pt-10">
+      <section className="mx-auto w-full max-w-[650px] px-6 md:md:pt-24 pt-6">
         <header className="mb-12">
           <h1 className="font-plinko text-[30px]">contact me</h1>
         </header>
