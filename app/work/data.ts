@@ -65,7 +65,7 @@ export const freelance = [
     video: "/arnecke-moving.webm",
     videoFallback: "/arnecke-moving.mov",
     description:
-      "Developed the entire frontend for Arnecke, an independent football and fashion brand by my longtime friend José Arnecke. To build it, I used Next.js, TypeScript and Tailwind CSS. We worked closely on brainstorming and translating ideas into the final experience, I built the e-commerce integration with Nuvemshop, set up Vercel for deployments, and created a password-protected pre-production environment for testing and review.",
+      "Developed the entire frontend for Arnecke, an independent football and fashion brand by my longtime friend José Arnecke. To build it, I used [[Next.js]], [[TypeScript]] and [[Tailwind CSS]]. We worked closely on brainstorming and translating ideas into the final experience, I built the e-commerce integration with [[Nuvemshop]], set up [[Vercel]] for deployments, and created a password-protected pre-production environment for testing and review. It was super fun!",
     link: "https://arneckecircle.com.br",
   },
 ];

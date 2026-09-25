@@ -15,6 +15,25 @@ export default function Work() {
 
   const selected = experiences[selectedIndex];
 
+  const renderDescription = (description: string) => {
+    return description.split(/(\[\[.*?\]\])/g).map((part, index) => {
+      const isHighlighted = part.startsWith("[[") && part.endsWith("]]");
+
+      if (isHighlighted) {
+        return (
+          <span
+            key={index}
+            className="underline underline-offset-2 font-semibold"
+          >
+            {part.slice(2, -2)}
+          </span>
+        );
+      }
+
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   return (
     <main className="min-h-dvh overflow-hidden bg-[#faf9f5] font-quicksand">
       <section className="mx-auto flex w-full max-w-[850px] flex-col px-6 pb-20 pt-6 md:pt-20">
@@ -26,16 +45,20 @@ export default function Work() {
             type="button"
             onClick={() => setActiveTab("work")}
             className={`cursor-pointer text-sm ${
-              activeTab === "work" ? "underline" : "opacity-40"
+              activeTab === "work"
+                ? "underline underline-offset-2 font-semibold"
+                : "opacity-40"
             }`}
           >
-            formal work
+            work
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("freelance")}
             className={`cursor-pointer text-sm ${
-              activeTab === "freelance" ? "underline" : "opacity-40"
+              activeTab === "freelance"
+                ? "underline underline-offset-2 font-semibold"
+                : "opacity-40"
             }`}
           >
             freelance
@@ -164,14 +187,14 @@ export default function Work() {
                       height={50}
                       className="mb-5 h-auto max-h-[50px] w-auto max-w-[160px] object-contain object-left"
                     />
-                    <p className="text-justify text-sm leading-relaxed">
-                      {project.description}
+                    <p className="text-sm leading-relaxed">
+                      {renderDescription(project.description)}
                     </p>
                     <Link
                       href={project.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-5 inline-block text-sm hover:underline"
+                      className="mt-5 inline-block text-md hover:underline font-bold underline-offset-2"
                     >
                       visit website
                     </Link>
