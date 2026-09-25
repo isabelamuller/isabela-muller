@@ -38,7 +38,6 @@ export default function RootLayout({
           >
             isabelamuller1@hotmail.com
           </a>
-          <span className="opacity-30">Date Last Modified: 16/07/2026</span>
         </footer>
       </body>
     </html>

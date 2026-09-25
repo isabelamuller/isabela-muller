@@ -1,21 +1,13 @@
+import { BackButton } from "@/components/Back";
 import { BottomMenu } from "@/components/BottomMenu";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { information } from "./data";
 
 export const metadata: Metadata = {
   title: "about me",
   description: "Isabela Müller about me",
 };
-
-const information = [
-  ["name", "Isabela Müller"],
-  ["born", "2001, Novo Hamburgo, Brazil"],
-  ["occupation", "senior front-end developer"],
-  ["goals", "live a happy fulfilling life"],
-  ["likes", "books, radio, strange films, cats, all things vintage"],
-  ["dislikes", "pizza, taking out the trash, gen AI, blah blah blah"],
-];
 
 export default function AboutMe() {
   return (
@@ -52,9 +44,7 @@ export default function AboutMe() {
             </div>
           ))}
         </dl>
-        <Link href="/menu" className="mt-10 inline-block text-sm underline">
-          [ back ]
-        </Link>
+        <BackButton />
       </section>
       <Image
         className="absolute bottom-5 left-1/2 -translate-x-1/2"

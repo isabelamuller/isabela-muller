@@ -1,8 +1,8 @@
 "use client";
 
+import { BackButton } from "@/components/Back";
 import { BottomMenu } from "@/components/BottomMenu";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Cats() {
   return (
@@ -13,9 +13,7 @@ export default function Cats() {
         </header>
         <h2>sorry, this page is still under construction! :D</h2>
         <Image src="/guy.png" alt="" width={100} height={100} />
-        <Link href="/menu" className="mt-6 inline-block text-sm underline">
-          [ back ]
-        </Link>
+        <BackButton />
       </section>
       <BottomMenu />
     </main>

@@ -1,33 +1,14 @@
 import { BottomMenu } from "@/components/BottomMenu";
 import Image from "next/image";
 import Link from "next/link";
+import { contacts } from "./data";
+import { BackButton } from "@/components/Back";
+import { Metadata } from "next";
 
-const contacts = [
-  {
-    value: "isabelamuller1@hotmail.com",
-    href: "mailto:isabelamuller1@hotmail.com",
-    icon: "/mail2.gif",
-    hover: "#ce3200",
-  },
-  {
-    value: "@isabela-müllerrr",
-    href: "https://www.linkedin.com/in/isabela-m%C3%BCllerrr/",
-    icon: "/linkedin.png",
-    hover: "#21bffe",
-  },
-  {
-    value: "@isabelaxmuller",
-    href: "https://www.instagram.com/isabelaxmuller",
-    icon: "/insta.png",
-    hover: "#6e463c",
-  },
-  {
-    value: "@isabelaxmuller",
-    href: "https://www.instagram.com/isabelaxmuller",
-    icon: "/github.png",
-    hover: "#000000",
-  },
-];
+export const metadata: Metadata = {
+  title: "contact me",
+  description: "Isabela Müller contact",
+};
 
 export default function Contact() {
   return (
@@ -68,7 +49,6 @@ export default function Contact() {
               className="resize-none border-2 border-t-[#c8c4b9] border-l-[#c8c4b9] border-r-[#efede6] border-b-[#efede6] bg-[#f4f2eb] p-2 outline-none focus:bg-[#f8f6f0]"
             />
           </label>
-
           <button
             type="submit"
             className="mt-1 w-fit cursor-pointer border-2 border-t-[#efede6] border-l-[#efede6] border-r-[#aaa69c] border-b-[#aaa69c] bg-[#e5e2d9] px-4 py-1 text-sm active:border-t-[#aaa69c] active:border-l-[#aaa69c] active:border-r-[#efede6] active:border-b-[#efede6] ml-auto"
@@ -101,9 +81,7 @@ export default function Contact() {
             </Link>
           ))}
         </div>
-        <Link href="/menu" className="mt-6 inline-block text-sm underline">
-          [ back ]
-        </Link>
+        <BackButton />
       </section>
       <Image
         className="absolute bottom-0 right-0 lg:block hidden"
