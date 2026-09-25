@@ -5,7 +5,7 @@ const menuItems = [
   { label: "about me", href: "/about-me" },
   { label: "contact", href: "/contact" },
   { label: "work", href: "/work" },
-  { label: "books", href: "/books" },
+  { label: "bookshelf", href: "/books" },
   { label: "misc", href: "/miscellaneous" },
   { label: "cats", href: "/cats" },
   { label: "leave a note", href: "/leave-a-note" },

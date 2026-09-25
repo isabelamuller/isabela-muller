@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Quicksand, Smooch_Sans } from "next/font/google";
+import { PageLoader } from "./PageLoader";
 
 const smoochSans = Smooch_Sans({
   subsets: ["latin"],
@@ -27,7 +28,8 @@ export default function RootLayout({
         ${smoochSans.variable}
       `}
     >
-      <body className="flex min-h-full flex-col px-5 md:px-0">
+      <body className="flex min-h-full flex-col">
+        <PageLoader />
         {children}
         <footer className="fixed bottom-3 left-3 md:flex flex-col font-arial text-xs hidden">
           <a

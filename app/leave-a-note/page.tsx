@@ -57,7 +57,7 @@ export default function LeaveANote() {
 
   return (
     <main className="bg-[#faf9f5] relative min-h-dvh overflow-hidden font-quicksand text-base">
-      <section className="mx-auto w-full max-w-[650px] px-6 pt-24">
+      <section className="mx-auto w-full max-w-[650px] px-6 md:pt-24 pt-10">
         <header className="mb-3">
           <h1 className="font-plinko text-[30px]">leave a note</h1>
         </header>
