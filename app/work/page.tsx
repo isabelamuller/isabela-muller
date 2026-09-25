@@ -66,7 +66,7 @@ export default function Work() {
         </div>
         {activeTab === "work" && (
           <>
-            <div className="relative">
+            <div className="relative md:pb-0 pb-3">
               <div className="overflow-x-auto md:pb-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 <div className="relative flex min-w-max items-start justify-between">
                   <div className="absolute left-0 right-0 top-[6px] h-px bg-black" />
@@ -121,8 +121,8 @@ export default function Work() {
                 </div>
               </div>
             </div>
-            <article className="items-center grid grid-cols-1 md:gap-6 md:pt-3 md:grid-cols-[220px_1fr]">
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <article className="items-center flex md:grid flex-col-reverse border-t border-black md:border-none md:gap-6 gap-3 pt-3 md:grid-cols-[220px_1fr]">
+              <div className="relative md:aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={selected.image}
                   alt=""
