@@ -23,7 +23,7 @@ export default function Menu() {
   };
 
   return (
-    <main className="bg-[#faf9f5] flex min-h-dvh items-center justify-center overflow-hidden px-5 md:px-0">
+    <main className="bg-[#faf9f5] flex min-h-dvh items-center justify-center overflow-hidden px-5 md:px-0 font-quicksand">
       {isPopUpOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 px-6 md:hidden">
           <div className="relative w-full max-w-[350px] border-2 border-t-white border-l-white border-r-[#777] border-b-[#777] bg-[#e5e2d9] p-5">
